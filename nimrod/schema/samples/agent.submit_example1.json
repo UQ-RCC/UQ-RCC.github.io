@@ -1,0 +1,47 @@
+{
+	"job": {
+		"commands": [
+			{
+				"action": "ignore",
+				"type": "onerror"
+			},
+			{
+				"arguments": [ "", "/path/to/script.py", "arg1" ],
+				"program": "python7",
+				"search_path": 1,
+				"type": "exec"
+			},
+			{
+				"action": "fail",
+				"type": "onerror"
+			},
+			{
+				"arguments": [ "notepad", "C:/windows/system32/drivers/etc/hosts" ],
+				"program": "notepad",
+				"search_path": 1,
+				"type": "exec"
+			},
+			{
+				"arguments": [ "", "/path/to/script.py", "arg1" ],
+				"program": "python7",
+				"search_path": 1,
+				"type": "exec"
+			},
+			{
+				"arguments": [ "notepad", "C:/windows/system32/drivers/etc/hosts" ],
+				"program": "notepad",
+				"search_path": 1,
+				"type": "exec"
+			}
+		],
+		"environment": {
+			"NIMROD_JOBINDEX": "1",
+			"NIMROD_VAR_x": "0",
+			"NIMROD_VAR_y": "0"
+		},
+		"index": 1,
+		"uuid": "f81f5457-cc80-416f-a8ee-9d70d83bf69b"
+	},
+	"type": "agent.submit",
+	"uuid": "7818abaf-b5f3-4ced-8524-86daca4d2096"
+}

@@ -1,0 +1,14 @@
+{
+	"action": "continue",
+	"command_result": {
+		"error_code": 0,
+		"index": 0,
+		"message": "Success",
+		"retval": 0,
+		"status": "success",
+		"time": 2.54104137420654
+	},
+	"job_uuid": "8947d348-dc84-4b0a-af31-8fadcb8914f0",
+	"type": "agent.update",
+	"uuid": "ab929930-86b7-4363-a2fc-0817468916e9"
+}

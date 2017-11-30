@@ -1,0 +1,14 @@
+{
+	"uuid": "98752a18-15fd-4abb-a1f6-60727eeb6064",
+	"type": "agent.update",
+	"job_uuid": "98752a18-15fd-4abb-a1f6-60727eeb6064",
+	"command_result": {
+		"error_code": 2,
+		"index": 1,
+		"message": "The system cannot find the file specified.",
+		"retval": -1,
+		"status": "system_error",
+		"time": 0.0
+	},
+	"action": "continue"
+}
