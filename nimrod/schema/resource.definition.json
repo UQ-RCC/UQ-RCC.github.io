@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"definitions": {
+		"config": {
+			"type": "object",
+			"additionalProperties": true
+		},
+		"node": {
+			"type": "object",
+			"properties": {
+				"name": { "type": "string" },
+				"config": { "$ref": "#/definitions/config" },
+				"nodes": {
+					"type": "array",
+					"items": { "$ref": "#/definitions/node" }
+				}
+			},
+			"required": [ "name", "config" ],
+			"additionalProperties": false
+		},
+		"resource": {
+			"properties": {
+				"name": { "type": "string" },
+				"type": { "type": "string" },
+				"nodes": {
+					"type": "array",
+					"items": { "$ref": "#/definitions/node" }
+				}
+			},
+			"required": [ "name", "nodes", "type" ],
+			"additionalProperties": false
+		}
+	},
+	"oneOf": [ { "$ref": "#/definitions/resource" } ]
+}
