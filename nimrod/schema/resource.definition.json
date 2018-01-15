@@ -21,12 +21,9 @@
 		"resource": {
 			"properties": {
 				"type": { "type": "string" },
-				"nodes": {
-					"type": "array",
-					"items": { "$ref": "#/definitions/node" }
-				}
+				"root": { "$ref":  "#/definitions/node"}
 			},
-			"required": [ "nodes", "type" ],
+			"required": [ "type", "root" ],
 			"additionalProperties": false
 		}
 	},

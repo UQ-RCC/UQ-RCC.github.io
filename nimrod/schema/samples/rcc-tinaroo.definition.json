@@ -1,31 +1,30 @@
 {
 	"type": "pbs",
-	"nodes": [
-		{
-			"name": "tinaroo",
-			"config": {
-				"uri": "ssh://uqusernmame@tinaroo.rcc.uq.edu.au",
-				"key": "/path/to/key",
-				"pbsargs": [
-					"-A",
-					"UQ-RCC",
-					"-l",
-					"mem=20gb,vmem=20gb",
-					"-l",
-					"walltime=168:00:00"
-				]
-			},
-			"nodes": [
-				{
-					"name": "intel-group",
-					"config": { "pbsargs": [ "-l", "nodes=1:ppn=1:intel" ] }
-				},
-				{
-					"name": "amd-group",
-					"config": { "pbsargs": [ "-l", "nodes=1:ppn=1:amd" ] }
-				}
+	"root": {
+		"name": "tinaroo",
+		"config": {
+			"uri": "ssh://uqusernmame@tinaroo.rcc.uq.edu.au",
+			"key": "/path/to/key",
+			"pbsargs": [
+				"-A",
+				"UQ-RCC",
+				"-l",
+				"mem=20gb,vmem=20gb",
+				"-l",
+				"walltime=168:00:00"
 			]
-		}
+		},
+		"nodes": [
+			{
+				"name": "intel-group",
+				"config": { "pbsargs": [ "-l", "nodes=1:ppn=1:intel" ] }
+			},
+			{
+				"name": "amd-group",
+				"config": { "pbsargs": [ "-l", "nodes=1:ppn=1:amd" ] }
+			}
+		]
+	}
 
-	]
+
 }
