@@ -20,14 +20,13 @@
 		},
 		"resource": {
 			"properties": {
-				"name": { "type": "string" },
 				"type": { "type": "string" },
 				"nodes": {
 					"type": "array",
 					"items": { "$ref": "#/definitions/node" }
 				}
 			},
-			"required": [ "name", "nodes", "type" ],
+			"required": [ "nodes", "type" ],
 			"additionalProperties": false
 		}
 	},

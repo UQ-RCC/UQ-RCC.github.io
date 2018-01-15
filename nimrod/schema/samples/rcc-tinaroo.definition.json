@@ -1,9 +1,8 @@
 {
-	"name": "tinaroo",
 	"type": "pbs",
 	"nodes": [
 		{
-			"name": "root",
+			"name": "tinaroo",
 			"config": {
 				"uri": "ssh://uqusernmame@tinaroo.rcc.uq.edu.au",
 				"key": "/path/to/key",
