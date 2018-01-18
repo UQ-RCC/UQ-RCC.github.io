@@ -1,0 +1,111 @@
+{
+	"variables": {
+		"x": [ "value-x-0", "value-x-1", "2", "azasfasasdfasdasdfasd", " " ],
+		"y": [ "value-y-0", "value-y-1", "10" ]
+	},
+	"tasks": {
+		"main": [
+			{
+				"type": "copy",
+				"source_context": "node",
+				"source_path": {
+					"text": "as sdfs ",
+					"substitutions": []
+				},
+				"destination_context": "node",
+				"destination_path": {
+					"text": "as",
+					"substitutions": []
+				}
+			},
+			{
+				"type": "copy",
+				"source_context": "node",
+				"source_path": {
+					"text": "as",
+					"substitutions": []
+				},
+				"destination_context": "root",
+				"destination_path": {
+					"text": "as",
+					"substitutions": []
+				}
+			},
+			{
+				"type": "onerror",
+				"action": "fail"
+			},
+			{
+				"type": "exec",
+				"program": "python",
+				"search_path": 1,
+				"arguments": [
+					{
+						"text": "python",
+						"substitutions": []
+					},
+					{
+						"text": "$x",
+						"substitutions": [
+							{
+								"name": "x",
+								"start": 0,
+								"end": 2,
+								"relative": 0
+							}
+						]
+					},
+					{
+						"text": "test",
+						"substitutions": []
+					}
+				]
+			},
+			{
+				"type": "exec",
+				"program": "",
+				"search_path": 1,
+				"arguments": [
+					{
+						"text": "",
+						"substitutions": []
+					},
+					{
+						"text": "as",
+						"substitutions": []
+					}
+				]
+			},
+			{
+				"type": "exec",
+				"program": "/usr/bin/python",
+				"search_path": 0,
+				"arguments": [
+					{
+						"text": "/usr/bin/python",
+						"substitutions": []
+					},
+					{
+						"text": "script.py",
+						"substitutions": []
+					}
+				]
+			},
+			{
+				"type": "exec",
+				"program": "python",
+				"search_path": 1,
+				"arguments": [
+					{
+						"text": "python",
+						"substitutions": []
+					},
+					{
+						"text": "script.py",
+						"substitutions": []
+					}
+				]
+			}
+		]
+	}
+}
