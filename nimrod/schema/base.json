@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"definitions": {
+		"identifier": {
+			"type": "string",
+			"pattern": "^[a-zA-Z0-9]+$"
+		},
+		"variable_identifier": {
+			"type": "string",
+			"pattern": "^[a-zA-Z](?:[a-zA-Z0-9])*$"
+		},
+		"config_key": {
+			"type": "string",
+			"pattern": "^[a-zA-Z0-9_]+(?:(?:\\.[a-zA-Z0-9_]+)+)?$"
+		},
+		"resource_path": {
+			"type": "string",
+			"pattern": "^[a-zA-Z0-9_]+(?:(?:/[a-zA-Z0-9_]+)+)?$"
+		}
+	}
+}
