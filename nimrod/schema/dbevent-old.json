@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"definitions": {
+		"resourceChange": {
+			"properties": {
+				"action": { "enum": [ "INSERT", "DELETE" ] },
+				"class": { "enum": [ "resource" ] },
+				"timestamp": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"payload": { "$ref": "dbevent.json#/definitions/resourcePayload" }
+			},
+			"required": [ "action", "class", "timestamp", "payload" ],
+			"additionalProperties": false
+		},
+		"configChange": {
+			"properties": {
+				"action": { "enum": [ "INSERT", "DELETE", "UPDATE" ] },
+				"class": { "enum": [ "config" ] },
+				"timestamp": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"payload": { "$ref": "dbevent.json#/definitions/configPayload" }
+			},
+			"required": [ "action", "class", "timestamp", "payload" ],
+			"additionalProperties": false
+		}
+	},
+	"oneOf": [
+		{ "$ref": "#/definitions/resourceChange" },
+		{ "$ref": "#/definitions/configChange" }
+	]
+}

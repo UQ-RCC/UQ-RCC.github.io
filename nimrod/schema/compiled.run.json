@@ -1,14 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"definitions": {
-		"identifier": {
-			"type": "string",
-			"pattern": "^[a-zA-Z](?:[a-zA-Z0-9])*$"
-		},
 		"substitution": {
 			"type": "object",
 			"properties": {
-				"name": { "$ref": "#/definitions/identifier" },
+				"name": { "$ref": "base.json#/definitions/variable_identifier" },
 				"start": {
 					"type": "integer",
 					"minimum": 0
@@ -35,6 +31,18 @@
 				}
 			},
 			"required": [ "text", "substitutions" ],
+			"additionalProperties": false
+		},
+		"normalisedCommand": {
+			"type": "object",
+			"properties": {
+				"type": { "enum": [ "onerror", "copy", "exec" ] },
+				"arguments": {
+					"type": "array",
+					"minItems": 1,
+					"items": { "$ref": "#/definitions/argument" }
+				}
+			},
 			"additionalProperties": false
 		},
 		"onerrorCommand": {
@@ -93,18 +101,7 @@
 	},
 	"type": "object",
 	"properties": {
-		"variables": {
-			"type": "object",
-			"patternProperties": {
-				"^[a-zA-Z](?:[a-zA-Z0-9])*$": {
-					"type": "array",
-					"minItems": 1,
-					"items": { "type": "string" }
-				}
-			},
-			"minProperties": 1,
-			"additionalProperties": false
-		},
+		"variables": { "$ref": "base.json#/definitions/variable_definition_object" },
 		"tasks": {
 			"type": "object",
 			"properties": {

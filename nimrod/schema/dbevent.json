@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"definitions": {
+		"resourcePayload": {
+			"properties": {
+				"id": {
+					"type": "integer",
+					"minimum": 1
+				},
+				"name": { "$ref": "base.json#/definitions/resource_name" },
+				"parent": {
+					"type": [ "integer", "null" ],
+					"minimum": 1
+				},
+				"config": { "type": "object" }
+			},
+			"additionalProperties": false
+		},
+		"configPayload": {
+			"properties": {
+				"key": {
+					"oneOf": [
+						{ "$ref": "base.json#/definitions/config_key" },
+						{ "type": "null" }
+					]
+				},
+				"old": { "type": [ "string", "null" ] },
+				"new": { "type": [ "string", "null" ] }
+			},
+			"required": [ "key", "old", "new" ],
+			"additionalProperties": false
+		},
+		"jobPayload": {
+			"properties": {
+				"run": { "$ref": "base.json#/definitions/run_name" }
+			},
+			"additionalProperties": false
+		}
+	},
+	"oneOf": [
+		{ "$ref": "#/definitions/resourcePayload" },
+		{ "$ref": "#/definitions/configPayload" }
+	]
+}

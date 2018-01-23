@@ -16,6 +16,21 @@
 		"resource_path": {
 			"type": "string",
 			"pattern": "^[a-zA-Z0-9_]+(?:(?:/[a-zA-Z0-9_]+)+)?$"
-		}
+		},
+		"variable_definition_object": {
+			"type": "object",
+			"patternProperties": {
+				"^[a-zA-Z](?:[a-zA-Z0-9])*$": {
+					"type": "array",
+					"minItems": 1,
+					"items": { "type": "string" }
+				}
+			},
+			"minProperties": 1,
+			"additionalProperties": false
+		},
+		"run_name": { "$ref": "#/definitions/identifier" },
+		"experiment_name": { "$ref": "#/definitions/identifier" },
+		"resource_name": { "$ref": "#/definitions/identifier" }
 	}
 }
