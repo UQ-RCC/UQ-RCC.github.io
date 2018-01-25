@@ -8,6 +8,7 @@
 					"minimum": 1
 				},
 				"name": { "$ref": "base.json#/definitions/resource_name" },
+				"path": { "$ref": "base.json#/definitions/resource_path" },
 				"parent": {
 					"type": [ "integer", "null" ],
 					"minimum": 1
