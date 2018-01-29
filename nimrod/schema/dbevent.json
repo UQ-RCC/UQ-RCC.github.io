@@ -1,12 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"definitions": {
+		"dbIdentifier": {
+			"type": "integer",
+			"minimum": 1
+		},
 		"resourcePayload": {
 			"properties": {
-				"id": {
-					"type": "integer",
-					"minimum": 1
-				},
+				"id": { "$ref": "#/definitions/dbIdentifier" },
 				"name": { "$ref": "base.json#/definitions/resource_name" },
 				"path": { "$ref": "base.json#/definitions/resource_path" },
 				"parent": {
@@ -31,15 +32,32 @@
 			"required": [ "key", "old", "new" ],
 			"additionalProperties": false
 		},
-		"jobPayload": {
+		"experimentPayload": {
 			"properties": {
-				"run": { "$ref": "base.json#/definitions/run_name" }
+				"id": { "$ref": "#/definitions/dbIdentifier" },
+				"name": { "$ref": "base.json#/definitions/experiment_name" },
+				"work_dir": { "type": "string" }
 			},
+			"required": [ "name", "path" ],
+			"additionalItems": false
+		},
+		"runPayload": {
+			"properties": {
+				"id": { "$ref": "#/definitions/dbIdentifier" },
+				"name": { "$ref": "base.json#/definitions/run_name" },
+				"exp_id": { "$ref": "#/definitions/dbIdentifier" },
+				"work_dir": { "type": "string" },
+				"created": { "type": "integer" },
+				"file_token": { "type": "string" }
+			},
+			"required": [ "id", "name", "exp_id", "work_dir", "created", "file_token" ],
 			"additionalProperties": false
 		}
 	},
 	"oneOf": [
 		{ "$ref": "#/definitions/resourcePayload" },
-		{ "$ref": "#/definitions/configPayload" }
+		{ "$ref": "#/definitions/configPayload" },
+		{ "$ref": "#/definitions/experimentPayload" },
+		{ "$ref": "#/definitions/runPayload" }
 	]
 }
