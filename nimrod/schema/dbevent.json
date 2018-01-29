@@ -36,7 +36,8 @@
 			"properties": {
 				"id": { "$ref": "#/definitions/dbIdentifier" },
 				"name": { "$ref": "base.json#/definitions/experiment_name" },
-				"work_dir": { "type": "string" }
+				"work_dir": { "type": "string" },
+				"start_flag": { "type": "boolean" }
 			},
 			"required": [ "name", "path" ],
 			"additionalItems": false
