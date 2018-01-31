@@ -53,12 +53,26 @@
 			},
 			"required": [ "id", "name", "exp_id", "work_dir", "created", "file_token" ],
 			"additionalProperties": false
+		},
+		"jobPayload": {
+			"properties": {
+				"id": { "$ref": "#/definitions/dbIdentifier" },
+				"run_id": { "$ref": "#/definitions/dbIdentifier" },
+				"job_index": {
+					"type": "integer",
+					"minimum": 1
+				},
+				"created": { "type": "integer" }
+			},
+			"required": [ "id", "run_id", "job_index", "created" ],
+			"additionalProperties": false
 		}
 	},
 	"oneOf": [
 		{ "$ref": "#/definitions/resourcePayload" },
 		{ "$ref": "#/definitions/configPayload" },
 		{ "$ref": "#/definitions/experimentPayload" },
-		{ "$ref": "#/definitions/runPayload" }
+		{ "$ref": "#/definitions/runPayload" },
+		{ "$ref": "#/definitions/jobPayload" }
 	]
 }
