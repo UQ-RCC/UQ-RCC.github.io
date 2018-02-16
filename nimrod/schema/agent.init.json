@@ -3,9 +3,8 @@
 	"type": "object",
 	"properties": {
 		"uuid": { "$ref": "agent.message.json#/definitions/uuid" },
-		"type": { "$ref": "agent.message.json#/definitions/message_type" },
-		"new_uuid": { "$ref": "agent.message.json#/definitions/uuid" }
+		"type": { "$ref": "agent.message.json#/definitions/message_type" }
 	},
-	"required": [ "uuid", "type", "new_uuid" ],
+	"required": [ "uuid", "type" ],
 	"additionalProperties": false
 }
