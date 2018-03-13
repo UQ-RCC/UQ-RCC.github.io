@@ -101,7 +101,11 @@
 	},
 	"type": "object",
 	"properties": {
-		"variables": { "$ref": "base.json#/definitions/variable_definition_object" },
+		"variables": {
+			"type": "array",
+			"minItems": 1,
+			"items": { "$ref": "base.json#/definitions/variable_definition" }
+		},
 		"tasks": {
 			"type": "object",
 			"properties": {

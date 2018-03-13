@@ -17,12 +17,16 @@
 			"type": "string",
 			"pattern": "^[a-zA-Z0-9_]+(?:(?:/[a-zA-Z0-9_]+)+)?$"
 		},
-		"variable_definition_object": {
+		"variable_definition": {
 			"type": "object",
-			"patternProperties": {
-				"^[a-zA-Z_](?:[a-zA-Z0-9_])*$": {
+			"properties": {
+				"name": {
+					"type": "string",
+					"pattern": "^[a-zA-Z_](?:[a-zA-Z0-9_])*$"
+				},
+				"values": {
 					"type": "array",
-					"minItems": 1,
+					"minItems": 1
 					"items": { "type": "string" }
 				}
 			},
