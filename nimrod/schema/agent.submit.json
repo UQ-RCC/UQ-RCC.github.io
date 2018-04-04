@@ -53,6 +53,7 @@
 			"properties": {
 				"uuid": { "$ref": "agent.message.json#/definitions/uuid" },
 				"index": { "type": "integer" },
+				"txuri": { "type": "string" },
 				"token": { "type": "string" },
 				"environment": {
 					"type": "object",
@@ -64,7 +65,7 @@
 					"items": { "$ref": "#/definitions/command" }
 				}
 			},
-			"required": [ "uuid", "index", "token", "environment", "commands" ],
+			"required": [ "uuid", "index", "txuri", "token", "environment", "commands" ],
 			"additionalProperties": false
 		}
 	},
