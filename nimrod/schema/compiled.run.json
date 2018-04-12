@@ -71,11 +71,7 @@
 			"type": "object",
 			"properties": {
 				"program": { "type": "string" },
-				"search_path": {
-					"type": "integer",
-					"minimum": 0,
-					"maximum": 1
-				},
+				"search_path": { "type": "boolean" },
 				"type": { "enum": [ "exec" ] },
 				"arguments": {
 					"type": "array",
