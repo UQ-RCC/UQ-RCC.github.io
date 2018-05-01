@@ -1,37 +1,38 @@
 {
 	"type": "pbs",
 	"root": {
-		"name": "tinaroo2",
+		"name": "tinaroo",
 		"config": {
 			"uri": "ssh://uqusernmame@tinaroo.rcc.uq.edu.au",
+			"limit": 100,
 			"key": "/path/to/key",
 			"pbsargs": [
 				"-A",
 				"UQ-RCC",
 				"-l",
-				"mem=20gb,vmem=20gb",
+				"select=1:ncpus=1,pmem=1gb",
 				"-l",
 				"walltime=168:00:00"
 			]
 		},
 		"nodes": [
 			{
-				"name": "intel_group",
-				"config": { "pbsargs": [ "-l", "nodes=1:ppn=1:intel" ] },
+				"name": "child1",
+				"config": { "pbsargs": [ "-l", "walltime=10:00:00" ] },
 				"nodes": [
 					{
 						"config": {},
-						"name": "shit"
+						"name": "child1_1"
 					}
 				]
 			},
 			{
-				"name": "amd_group",
-				"config": { "pbsargs": [ "-l", "nodes=1:ppn=1:amd" ] },
+				"name": "child2",
+				"config": { "child1": [ "-l", "walltime=5:00:00" ] },
 				"nodes": [
 					{
 						"config": {},
-						"name": "fuck"
+						"name": "child2_1"
 					}
 				]
 			}
