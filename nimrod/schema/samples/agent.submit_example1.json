@@ -42,7 +42,8 @@
 		"index": 1,
 		"uuid": "f81f5457-cc80-416f-a8ee-9d70d83bf69b",
 		"txuri": "https://localhost:8080/exp1/run1",
-		"token": "abc123"
+		"txuser": "bob",
+		"txpass": "abc123"
 	},
 	"type": "agent.submit",
 	"uuid": "7818abaf-b5f3-4ced-8524-86daca4d2096"
